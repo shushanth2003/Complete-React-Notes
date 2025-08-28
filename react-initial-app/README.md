@@ -1,70 +1,101 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+````markdown
+## Understanding React Project Structure  
 
-## Available Scripts
+When you create a React app, some files and folders are auto-generated.  
+Here’s why they exist:
 
-In the project directory, you can run:
+### 1. `node_modules/`
+- Contains all installed libraries and dependencies.  
+- Created when you run `npm install`.  
+- Should **not** be pushed to GitHub (it’s huge, and can be recreated from `package.json`).  
 
-### `npm start`
+### 2. `package.json`
+- The **blueprint** of the project.  
+- Lists project info (name, version, scripts).  
+- Defines dependencies (React, ReactDOM, etc.).  
+- Example:
+  ```json
+  {
+    "name": "react-initial-app",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build"
+    },
+    "dependencies": {
+      "react": "^18.0.0"
+    }
+  }
+````
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. `package-lock.json`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Keeps the **exact version** of each dependency.
+* Ensures the same setup on every machine.
+* Auto-generated, don’t edit manually.
 
-### `npm test`
+### 4. `.gitignore`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Tells Git which files/folders **not** to track.
+* Commonly ignores `node_modules/`, `build/`, `.env`, etc.
+* Example:
 
-### `npm run build`
+  ```
+  /node_modules
+  /build
+  .env
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ In short:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **node\_modules/** → actual libraries.
+* **package.json** → project recipe.
+* **package-lock.json** → locks versions for stability.
+* **.gitignore** → avoids pushing unnecessary files.
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Do you also want me to include an **overview diagram** (like “React Project Flow”) in your notes so it’s even more visual?
+```
+## What are Components in React?  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A **Component** is a small, reusable piece of UI in React.  
+Think of it like a **function** that returns HTML (JSX).  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Why functions are called Components?
+- In React, a component is just a **JavaScript function** that:
+  1. Takes inputs (**props**)  
+  2. Returns JSX (UI)  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React treats these functions as **building blocks** of the app.  
+- Components make the app **modular, reusable, and easy to manage**.  
 
-## Learn More
+### Example
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Functional Component
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Class Components in React  
 
-### Code Splitting
+Class Components are the **older way** of creating components in React (before Hooks were introduced).  
+They are JavaScript ES6 classes that extend `React.Component`.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## What are Props in React?  
 
-### Analyzing the Bundle Size
+**Props** (short for *properties*) are used to **pass data** from one component to another.  
+They make components **dynamic and reusable**.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Why use Props?
+- To share data between components.  
+- To make components flexible (same component can display different data).  
+- They are **read-only** (cannot be changed by the child component).  
 
-### Making a Progressive Web App
+### Example
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Parent Component
