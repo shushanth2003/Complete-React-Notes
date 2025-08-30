@@ -1,10 +1,13 @@
 import react from "react";
 
 class Apple extends react.Component{
+    
     render(){
+        const{appleInfo}=this.props;
+        const {type,color}=appleInfo;
         return(
             <>
-                <h1>This would be content of small piece of apple version, did you get the point</h1>
+                <h1>I m a {type} {color} apple</h1>
             </>
         )
     }
