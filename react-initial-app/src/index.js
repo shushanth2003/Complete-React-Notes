@@ -7,12 +7,12 @@ import reportWebVitals from './reportWebVitals';
 // import Header from './Components/Header';
 // import Favoritecar from './Components/Favoritecar'
 // import ColorClassComponents from './Components/ColorClassComponents';
+import Scooter from './Components/Scooter.js'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Favoritecar/>
-    <ColorClassComponents/>
-  </React.StrictMode>
+  <>
+    <Scooter/>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
