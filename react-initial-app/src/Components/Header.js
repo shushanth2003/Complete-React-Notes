@@ -1,8 +1,8 @@
-import react from 'react'
+import Style from './Header.module.css'
 function Header(){
     return(
         <>
-            <h1 style={{color:"red",backgroundColor:"lightblue"}}>Hello Styling</h1>
+            <h1 className={Style.bigBlueheading}>Hello Styling</h1>
             <p>Add a little Style</p>
         </>
     )

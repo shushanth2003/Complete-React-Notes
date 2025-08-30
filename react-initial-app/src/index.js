@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Garbage from './Components/Garbage';
-import Header from './Components/Header';
+// import Garbage from './Components/Garbage';
+// import Header from './Components/Header';
+// import Favoritecar from './Components/Favoritecar'
+// import ColorClassComponents from './Components/ColorClassComponents';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header></Header>
+    <Favoritecar/>
+    <ColorClassComponents/>
   </React.StrictMode>
 );
 
