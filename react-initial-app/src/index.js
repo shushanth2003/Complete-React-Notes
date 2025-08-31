@@ -9,11 +9,12 @@ import reportWebVitals from './reportWebVitals';
 // import ColorClassComponents from './Components/ColorClassComponents';
 // import Scooter from './Components/Scooter.js'
 // import TodoList from './Components/TodoList';
-import Form from './Components/Form'
+// import Form from './Components/Form'
+import Register from './Components/Register';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Form/>
+    <Register/>
   </>
 );
 
