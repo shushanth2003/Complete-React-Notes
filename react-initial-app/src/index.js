@@ -7,11 +7,13 @@ import reportWebVitals from './reportWebVitals';
 // import Header from './Components/Header';
 // import Favoritecar from './Components/Favoritecar'
 // import ColorClassComponents from './Components/ColorClassComponents';
-import Scooter from './Components/Scooter.js'
+// import Scooter from './Components/Scooter.js'
+// import TodoList from './Components/TodoList';
+import Form from './Components/Form'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Scooter/>
+    <Form/>
   </>
 );
 
