@@ -10,11 +10,12 @@ import reportWebVitals from './reportWebVitals';
 // import Scooter from './Components/Scooter.js'
 // import TodoList from './Components/TodoList';
 // import Form from './Components/Form'
-import Register from './Components/Register';
+// import Register from './Components/Register';
+import Login from './Components/Login.js'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Register/>
+    <Login/>
   </>
 );
 
