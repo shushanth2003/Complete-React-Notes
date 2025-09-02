@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from'../Components/Header.css'
 function GuessNumber(){
     const[inputNumber,setInputNumber]=useState(0);
     const [result,setResult]=useState("");
@@ -18,10 +19,18 @@ function GuessNumber(){
      console.log("Passing result : "+result);
     return(
         <>
-            <h1>Guess the number between 1 to 10</h1><br />
-            <input type="number" name="inputNumber" onChange={handleChange} value={inputNumber}/><br />
-            <button onClick={handleSubmit}>check</button><br />
-            <p>Your guess is <span name="result">{result}</span></p>
+             <div className={styles.container}>
+                <h1 className={styles.title}>Guess the number between 1 to 10</h1>
+      <input
+        type="number"
+        className={styles.input}
+        onChange={handleChange}
+        value={inputNumber}
+      />
+      <br />
+      <button className={styles.button} onClick={handleSubmit}>Check</button>
+      <p className={styles.result}>Your guess is: {result}</p>
+    </div>
         </>
     )
 }
