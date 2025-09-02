@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from'../Components/Header.css'
+import styles from "../style/Header.css"
 function GuessNumber(){
     const[inputNumber,setInputNumber]=useState(0);
     const [result,setResult]=useState("");
