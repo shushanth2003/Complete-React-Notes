@@ -1,7 +1,12 @@
-exports.getProduct=(req,res,next)=>{
+const productModel=require("../model/productModel.js")
+
+
+//Get Product Id
+exports.getProduct=async(req,res,next)=>{
+   const product=await productModel.find({});
     res.json({
         success:true,
-        message:"Actually I get Product from the files"
+        product
     })
 }
 
